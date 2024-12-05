@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Avaliacao.Infraestructure.CrossCutting\Avaliacao.Infraestructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\Avaliacao.Microservice.Domain\Avaliacao.Microservice.Domain.csproj" />
   </ItemGroup>
 
 </Project>

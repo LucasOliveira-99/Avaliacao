@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Avaliacao.Infraestructure.CrossCutting.Common.Messages;
+﻿using Avaliacao.Infraestructure.CrossCutting.Common.Messages;
 using MediatR;
 
 namespace Avaliacao.Infraestructure.CrossCutting.Common.CQS

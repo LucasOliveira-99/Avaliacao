@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
+﻿using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

@@ -17,7 +17,7 @@ namespace Avaliacao.Application
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(FailFastRequestBehavior<,>));
-            services.AddAutoMapper(
+            services.AddMediatR(
                 typeof(ApplicationIoC),
                 typeof(InfraestructureIoC)
             );

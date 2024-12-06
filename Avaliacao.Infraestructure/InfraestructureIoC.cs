@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
 using Microsoft.EntityFrameworkCore;
+using Avaliacao.Microservice.Domain.Contexts.Veiculo.Interfaces;
+using Avaliacao.Infraestructure.Data.Repositories;
 
 namespace Avaliacao.Infraestructure
 {
@@ -15,7 +17,7 @@ namespace Avaliacao.Infraestructure
         {
             services.AddScoped<IMediatorHandler, MediatorHandler>();
 
-            //services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IVeiculoRepository, VeiculoRepository>();
 
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddTransient<IDbConnection>(_ => new NpgsqlConnection(connectionString));

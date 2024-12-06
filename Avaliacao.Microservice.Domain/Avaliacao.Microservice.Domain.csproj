@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Contexts\Veiculo\Events\" />
-    <Folder Include="Contexts\Veiculo\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>

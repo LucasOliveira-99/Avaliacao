@@ -1,8 +1,9 @@
-﻿using System.Reflection;
-using Avaliacao.Application.Common.Behavior;
+﻿using Avaliacao.Application.Common.Behavior;
+using Avaliacao.Infraestructure;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace Avaliacao.Application
 {
@@ -16,7 +17,7 @@ namespace Avaliacao.Application
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(FailFastRequestBehavior<,>));
-            services.AddMediatR(
+            services.AddAutoMapper(
                 typeof(ApplicationIoC),
                 typeof(InfraestructureIoC)
             );

@@ -71,12 +71,12 @@ namespace Avaliacao.Infraestructure.Data
                     sucesso = await SaveChangesAsync() > 0;
 
                     if (sucesso)
-                        await _mediator.PublicarEventosAsync(this);
 
-                    return sucesso;
+
+                        return sucesso;
                 }
 
-                await _mediator.PublicarEventosAsync(this);
+
                 return true;
             }
             catch (Exception ex)
@@ -85,3 +85,4 @@ namespace Avaliacao.Infraestructure.Data
             }
         }
     }
+}

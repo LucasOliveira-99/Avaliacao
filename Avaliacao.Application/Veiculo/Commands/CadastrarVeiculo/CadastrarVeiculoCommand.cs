@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo.Validators;
 using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 
 namespace Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo
@@ -16,7 +17,7 @@ namespace Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo
 
         public override bool IsValid()
         {
-            AdicionarErros(new ValidarDigitosRgValidator().Validate(this));
+            AdicionarErros(new CadastrarVeiculoValidator().Validate(this));
 
             return ValidationResult.IsValid;
         }

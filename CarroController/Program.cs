@@ -1,25 +1,24 @@
-var builder = WebApplication.CreateBuilder(args);
+using Avaliacao.Microservice.WebAPI.Configurations.Swagger;
+using Avaliacao.Microservice.WebAPI.Configurations;
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+try
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var builder = WebApplication.CreateBuilder(args);
+    builder.Services.UseApiServices(builder.Configuration, typeof(Program));
+
+
+    var app = builder.Build();
+    app.UseAppBuildConfiguration(builder.Configuration);
+
+    if (!app.Environment.IsProduction())
+    {
+        app.UseSwaggerConfig();
+    }
+    //TODO - FALTOU CONFIGURAR O ELASTIC.APM E O HealthChecks OLHAR O BFF
+    app.MapControllers();
+    app.Run();
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
+catch (Exception ex)
+{
+    Console.WriteLine("Erro", ex.Message);
+}

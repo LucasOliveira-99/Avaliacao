@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Avaliacao.Microservice.WebAPI.Controllers;
-
-namespace Avaliacao.Microservice.WebAPI.DTOs.CadastrarVeiculo
+﻿namespace Avaliacao.Microservice.WebAPI.DTOs.CadastrarVeiculo
 {
     public class CadastrarVeiculoRequest
     {
@@ -10,5 +7,4 @@ namespace Avaliacao.Microservice.WebAPI.DTOs.CadastrarVeiculo
         public string Marca { get; set; }
         public string Cor { get; set; }
     }
-
 }

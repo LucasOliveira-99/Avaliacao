@@ -13,7 +13,7 @@ namespace Avaliacao.Infraestructure.CrossCutting.Common.Entities
         {
         }
 
-        public Guid Id { get; protected set; }
+        public int Id { get; protected set; }
         public virtual DateTime DataCadastro { get; private set; } = DateTime.Now;
         public virtual DateTime? DataUltimaAtualizacao { get; set; }
 

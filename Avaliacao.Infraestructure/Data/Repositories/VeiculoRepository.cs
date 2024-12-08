@@ -1,6 +1,7 @@
 ﻿using Avaliacao.Infraestructure.Data.Repositories.Common;
 using Avaliacao.Microservice.Domain.Contexts.Veiculo;
 using Avaliacao.Microservice.Domain.Contexts.Veiculo.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Avaliacao.Infraestructure.Data.Repositories
 {
@@ -10,5 +11,11 @@ namespace Avaliacao.Infraestructure.Data.Repositories
         {
             
         }
+
+        public async Task<Veiculo> ObterVeiculo(int veiculoID)
+        {
+            return await _context.Veiculos.FirstOrDefaultAsync(x => x.Id == veiculoID);
+        }
+
     }
 }

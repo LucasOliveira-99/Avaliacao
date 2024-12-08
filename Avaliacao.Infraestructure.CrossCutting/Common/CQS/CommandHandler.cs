@@ -27,6 +27,9 @@ namespace Avaliacao.Infraestructure.CrossCutting.Common.CQS
         public IActionResult ReturnNotFound<T>(string message) where T : View
             => new NotFoundObjectResult(new BaseResponse<T>(System.Net.HttpStatusCode.NotFound, message));
 
+        public IActionResult ReturnBadRequest<T>(string message) where T : View
+    => new BadRequestObjectResult(new BaseResponse<T>(System.Net.HttpStatusCode.BadRequest, message));
+
         public IActionResult ReturnUnauthorized<T>(string message) where T : View
             => new UnauthorizedObjectResult(new BaseResponse<T>(System.Net.HttpStatusCode.Unauthorized, message));
 

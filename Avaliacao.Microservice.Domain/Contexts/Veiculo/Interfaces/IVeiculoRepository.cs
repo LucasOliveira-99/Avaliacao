@@ -4,5 +4,6 @@ namespace Avaliacao.Microservice.Domain.Contexts.Veiculo.Interfaces
 {
     public interface  IVeiculoRepository : IBaseRepository<Veiculo>
     {
+        Task<Veiculo> ObterVeiculo(int veiculoID);
     }
 }

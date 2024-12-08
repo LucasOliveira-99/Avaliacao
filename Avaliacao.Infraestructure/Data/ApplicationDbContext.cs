@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Numerics;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
+﻿using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 using Avaliacao.Infraestructure.CrossCutting.Common.Entities;
 using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
+using Avaliacao.Microservice.Domain.Contexts.Alugueis;
 using Avaliacao.Microservice.Domain.Contexts.Veiculo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.ComponentModel.DataAnnotations;
 
 namespace Avaliacao.Infraestructure.Data
 {
@@ -24,6 +17,8 @@ namespace Avaliacao.Infraestructure.Data
         public IDbContextTransaction GetCurrentTransaction() => _currentTransaction;
 
         public DbSet<Veiculo> Veiculos { get; set; }
+
+        public DbSet<Aluguel> Alugueis { get; set; }
         public bool HasActiveTransaction => _currentTransaction != null;
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IMediatorHandler mediator) : base(options)
@@ -72,10 +67,8 @@ namespace Avaliacao.Infraestructure.Data
 
                     if (sucesso)
 
-
                         return sucesso;
                 }
-
 
                 return true;
             }

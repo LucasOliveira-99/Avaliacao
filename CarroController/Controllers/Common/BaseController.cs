@@ -27,7 +27,6 @@ namespace Avaliacao.Microservice.WebAPI.Controllers.Common
         protected virtual async Task<IActionResult> SendCommand<TCommandType>(TCommandType command) where TCommandType : Command
             => await _mediatorHandler.EnviarComandoAsync(command);
 
-
         protected virtual async Task<IActionResult> ExecutarQueryAsync<TInput>(TInput query) where TInput : Query
         => await _mediatorHandler.ExecutarQueryAsync(query);
     }

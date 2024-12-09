@@ -1,5 +1,5 @@
-﻿using Avaliacao.Infraestructure.CrossCutting.Common.Views;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
+using Avaliacao.Infraestructure.CrossCutting.Common.Views;
 
 namespace Avaliacao.Application.Veiculo.Commands.AlugarVeiculo.Views
 {

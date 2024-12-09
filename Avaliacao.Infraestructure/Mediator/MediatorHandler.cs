@@ -1,6 +1,5 @@
 ﻿using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
-using Hangfire;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

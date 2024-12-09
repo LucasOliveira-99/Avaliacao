@@ -19,7 +19,6 @@ namespace Avaliacao.Infraestructure.CrossCutting.Common.CQS
         protected virtual void AdicionarErro(string propertyName, string mensagem)
             => ValidationResult.Errors.Add(new ValidationFailure(propertyName: propertyName, errorMessage: mensagem));
 
-
         #region 2xxx
 
         public IActionResult RetornaOk<T>() where T : View
@@ -33,9 +32,11 @@ namespace Avaliacao.Infraestructure.CrossCutting.Common.CQS
 
         public IActionResult RetornaOkComListaVazia<T>() where T : View
            => new OkObjectResult(new BaseListResponse<T>(System.Net.HttpStatusCode.OK, "Operação realizada com sucesso."));
-        #endregion
+
+        #endregion 2xxx
 
         #region 4xx
+
         public IActionResult ReturnBadRequestComErros<T>(string codigo, string grupoErro) where T : View
             => new BadRequestObjectResult(new BaseResponse<T>(System.Net.HttpStatusCode.BadRequest, ValidationResult.Errors.Select(c => new ResponseErroView(codigo, grupoErro, c.ErrorMessage)).ToList()));
 
@@ -47,6 +48,7 @@ namespace Avaliacao.Infraestructure.CrossCutting.Common.CQS
 
         public IActionResult ReturnForbiddenComErros<T>(string codigo, string grupoErro) where T : View
             => new ObjectResult(new BaseResponse<T>(System.Net.HttpStatusCode.Forbidden, ValidationResult.Errors.Select(c => new ResponseErroView(codigo, grupoErro, c.ErrorMessage)).ToList())) { StatusCode = 403 };
-        #endregion
+
+        #endregion 4xx
     }
 }

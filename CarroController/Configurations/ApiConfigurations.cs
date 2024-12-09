@@ -1,13 +1,10 @@
-﻿using Avaliacao.Infraestructure.CrossCutting.IoC;
+﻿using System.Reflection;
+using System.Text.Json.Serialization;
+using Avaliacao.Infraestructure.CrossCutting.IoC;
 using Avaliacao.Microservice.WebAPI.Configurations.Culture;
 using Avaliacao.Microservice.WebAPI.Configurations.Swagger;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel;
-using System.Reflection;
-using System.Text.Json.Serialization;
-
 
 namespace Avaliacao.Microservice.WebAPI.Configurations
 {
@@ -15,7 +12,6 @@ namespace Avaliacao.Microservice.WebAPI.Configurations
     {
         public static IServiceCollection UseApiServices(this IServiceCollection services, IConfiguration configuration, Type startup)
         {
-            
             services.SetDefaultCultureToBrazilian();
             services.AddControllers().AddNewtonsoftJson();
 

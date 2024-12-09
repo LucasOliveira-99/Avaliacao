@@ -1,8 +1,8 @@
-﻿using FluentValidation.Results;
-using MediatR;
-using System.Runtime.Serialization;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Runtime.Serialization;
 using Avaliacao.Infraestructure.CrossCutting.Common.Messages;
+using FluentValidation.Results;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Avaliacao.Infraestructure.CrossCutting.Common.CQS
 {

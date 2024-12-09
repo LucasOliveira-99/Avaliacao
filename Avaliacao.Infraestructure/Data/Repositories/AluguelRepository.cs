@@ -1,7 +1,6 @@
 ﻿using Avaliacao.Infraestructure.Data.Repositories.Common;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis.Interfaces;
-using Avaliacao.Microservice.Domain.Contexts.Veiculo;
 using Microsoft.EntityFrameworkCore;
 
 namespace Avaliacao.Infraestructure.Data.Repositories
@@ -10,7 +9,6 @@ namespace Avaliacao.Infraestructure.Data.Repositories
     {
         public AluguelRepository(ApplicationDbContext context) : base(context)
         {
-
         }
 
         public async Task<Aluguel> ObterAluguel(int aluguelID)

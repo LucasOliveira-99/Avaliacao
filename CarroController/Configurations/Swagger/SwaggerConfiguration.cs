@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Reflection;
-using System.Text.Json;
 
 namespace Avaliacao.Microservice.WebAPI.Configurations.Swagger
 {
@@ -50,8 +48,6 @@ namespace Avaliacao.Microservice.WebAPI.Configurations.Swagger
                 c.CustomSchemaIds(x => x.FullName);
                 c.OperationFilter<SwaggerDefaultValues>();
                 c.OperationFilter<SecurityRequirementsOperationFilter>();
-
-          
             });
 
             return services;

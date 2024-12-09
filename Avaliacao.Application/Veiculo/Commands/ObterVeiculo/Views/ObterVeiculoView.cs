@@ -1,6 +1,6 @@
-﻿using Avaliacao.Infraestructure.CrossCutting.Common.Enums;
+﻿using System.Runtime.Serialization;
+using Avaliacao.Infraestructure.CrossCutting.Common.Enums;
 using Avaliacao.Infraestructure.CrossCutting.Common.Views;
-using System.Runtime.Serialization;
 
 namespace Avaliacao.Application.Veiculo.Commands.ObterVeiculo.Views
 {

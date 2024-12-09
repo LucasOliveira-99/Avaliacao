@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo.Validators;
+﻿using Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo.Validators;
 using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 
 namespace Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo

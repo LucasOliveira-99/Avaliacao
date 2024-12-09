@@ -1,4 +1,5 @@
-﻿using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
+﻿using System.Data;
+using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
 using Avaliacao.Infraestructure.Data;
 using Avaliacao.Infraestructure.Data.Repositories;
 using Avaliacao.Infraestructure.Mediator;
@@ -8,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
-using System.Data;
 
 namespace Avaliacao.Infraestructure
 {

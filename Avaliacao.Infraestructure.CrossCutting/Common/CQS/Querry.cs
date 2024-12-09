@@ -25,6 +25,7 @@ namespace Avaliacao.Infraestructure.CrossCutting.Common.CQS
 
         public virtual void AdicionarErros(List<ValidationFailure> erros)
             => ValidationResult.Errors.AddRange(erros);
+
         public virtual void AdicionarErros(ValidationResult validationResult)
             => ValidationResult = validationResult;
     }

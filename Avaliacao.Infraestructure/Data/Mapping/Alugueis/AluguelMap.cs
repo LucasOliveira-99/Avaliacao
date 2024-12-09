@@ -18,7 +18,6 @@ namespace Avaliacao.Infraestructure.Data.Mapping.Alugueis
             builder.Property(x => x.VeiculoId)
              .HasColumnName("veiculoid");
 
-
             builder.Property(x => x.DataInicio)
                 .HasColumnName("datainicio");
 

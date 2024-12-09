@@ -1,9 +1,9 @@
-﻿using Avaliacao.Application.Common.Behavior;
+﻿using System.Reflection;
+using Avaliacao.Application.Common.Behavior;
 using Avaliacao.Infraestructure;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace Avaliacao.Application
 {

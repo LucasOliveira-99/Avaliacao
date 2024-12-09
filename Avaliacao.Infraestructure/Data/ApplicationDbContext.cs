@@ -1,11 +1,11 @@
-﻿using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
+﻿using System.ComponentModel.DataAnnotations;
+using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 using Avaliacao.Infraestructure.CrossCutting.Common.Entities;
 using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis;
 using Avaliacao.Microservice.Domain.Contexts.Veiculos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using System.ComponentModel.DataAnnotations;
 
 namespace Avaliacao.Infraestructure.Data
 {

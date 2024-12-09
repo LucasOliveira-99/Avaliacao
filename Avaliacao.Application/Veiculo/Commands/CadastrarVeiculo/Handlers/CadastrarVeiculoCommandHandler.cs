@@ -28,6 +28,7 @@ namespace Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo.Handlers
                 await PersistirDados(_veiculoRepository.UnitOfWork);
             }
 
+
             return ReturnOk(new CadastrarVeiculoView(veiculo));
         }
 

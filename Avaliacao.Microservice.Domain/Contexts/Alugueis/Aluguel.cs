@@ -2,6 +2,7 @@
 using Avaliacao.Infraestructure.CrossCutting.Common.Enums;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis.Dto;
 
+
 namespace Avaliacao.Microservice.Domain.Contexts.Alugueis
 {
     public class Aluguel : Entity
@@ -21,6 +22,13 @@ namespace Avaliacao.Microservice.Domain.Contexts.Alugueis
         public StatusAluguel Status { get; private set; }
 
         private const decimal TaxaPorDiaDeAtraso = 0.1m;
+
+        public Avaliacao.Microservice.Domain.Contexts.Veiculos.Veiculo Veiculo { get; set; }
+
+
+
+
+        protected Aluguel() { }
 
         public Aluguel(AlugarVeiculoDTO alugarVeiculoDTO)
         {

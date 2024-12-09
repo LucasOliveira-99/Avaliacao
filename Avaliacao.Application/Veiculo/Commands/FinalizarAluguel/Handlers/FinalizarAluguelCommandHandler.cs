@@ -2,7 +2,7 @@
 using Avaliacao.Application.Veiculo.Commands.FinalizarAluguel.Views;
 using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis.Interfaces;
-using Avaliacao.Microservice.Domain.Contexts.Veiculo.Interfaces;
+using Avaliacao.Microservice.Domain.Contexts.Veiculos.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,7 +30,7 @@ namespace Avaliacao.Application.Veiculo.Commands.FinalizarAluguel.Handlers
 
             aluguel.FinalizarAluguel(command.DataDevolucao);
 
-            var veiculo = await _veiculoRepository.ObterVeiculo(aluguel.VeiculoId);
+            var veiculo = await _veiculoRepository.ObterVeiculoPorId(aluguel.VeiculoId);
 
             //Atualizar status veiculo
             veiculo.MarcarComoDisponivel();

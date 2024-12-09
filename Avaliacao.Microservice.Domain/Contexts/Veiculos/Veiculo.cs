@@ -3,7 +3,7 @@ using Avaliacao.Infraestructure.CrossCutting.Common.Enums;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis;
 using Avaliacao.Microservice.Domain.Contexts.Veiculo.Dto;
 
-namespace Avaliacao.Microservice.Domain.Contexts.Veiculo
+namespace Avaliacao.Microservice.Domain.Contexts.Veiculos
 {
     public class Veiculo : AggregateRoot
     {
@@ -38,7 +38,7 @@ namespace Avaliacao.Microservice.Domain.Contexts.Veiculo
 
         public void MarcarComoDisponivel()
         {
-            FlagStatusVeiculo = StatusVeiculo.INDISPONIVEL;
+            FlagStatusVeiculo = StatusVeiculo.DISPONIVEL;
         }
     }
 }

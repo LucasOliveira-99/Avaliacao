@@ -2,7 +2,7 @@
 using Avaliacao.Infraestructure.CrossCutting.Common.Entities;
 using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis;
-using Avaliacao.Microservice.Domain.Contexts.Veiculo;
+using Avaliacao.Microservice.Domain.Contexts.Veiculos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.ComponentModel.DataAnnotations;

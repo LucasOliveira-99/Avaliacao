@@ -1,16 +1,18 @@
-﻿using System.Runtime.Serialization;
+﻿using Avaliacao.Infraestructure.CrossCutting.Common.Enums;
 using Avaliacao.Infraestructure.CrossCutting.Common.Views;
+using System.Runtime.Serialization;
 
-namespace Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo.Views
+namespace Avaliacao.Application.Veiculo.Commands.ObterVeiculo.Views
 {
-    public class CadastrarVeiculoView : View
+    public class ObterVeiculoView : View
     {
-        public CadastrarVeiculoView(Microservice.Domain.Contexts.Veiculos.Veiculo response)
+        public ObterVeiculoView(Microservice.Domain.Contexts.Veiculos.Veiculo response)
         {
             Marca = response.Marca;
             Placa = response.Placa;
             Modelo = response.Modelo;
             Cor = response.Cor;
+            FlagStatusVeiculo = response.FlagStatusVeiculo;
         }
 
         [DataMember]
@@ -24,5 +26,8 @@ namespace Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo.Views
 
         [DataMember]
         public string Cor { get; set; }
+
+        [DataMember]
+        public StatusVeiculo FlagStatusVeiculo { get; private set; }
     }
 }

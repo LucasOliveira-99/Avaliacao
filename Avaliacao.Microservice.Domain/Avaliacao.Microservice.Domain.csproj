@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contexts\Veiculo\Events\" />
+    <Folder Include="Contexts\Veiculos\Events\" />
   </ItemGroup>
 
   <ItemGroup>

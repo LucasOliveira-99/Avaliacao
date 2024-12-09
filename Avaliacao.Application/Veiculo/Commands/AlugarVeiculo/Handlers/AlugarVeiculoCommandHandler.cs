@@ -2,7 +2,7 @@
 using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis.Dto;
 using Avaliacao.Microservice.Domain.Contexts.Alugueis.Interfaces;
-using Avaliacao.Microservice.Domain.Contexts.Veiculo.Interfaces;
+using Avaliacao.Microservice.Domain.Contexts.Veiculos.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +21,7 @@ namespace Avaliacao.Application.Veiculo.Commands.AlugarVeiculo.Handlers
 
         public async Task<IActionResult> Handle(AlugarVeiculoCommand command, CancellationToken cancellationToken)
         {
-            var veiculo = await _veiculoRepository.ObterVeiculo(command.VeiculoId);
+            var veiculo = await _veiculoRepository.ObterVeiculoPorId(command.VeiculoId);
 
             if (veiculo is null)
             {

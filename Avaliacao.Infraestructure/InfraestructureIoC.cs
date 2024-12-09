@@ -1,13 +1,14 @@
-﻿using System.Data;
-using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
+﻿using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
 using Avaliacao.Infraestructure.Data;
+using Avaliacao.Infraestructure.Data.Repositories;
 using Avaliacao.Infraestructure.Mediator;
+using Avaliacao.Microservice.Domain.Contexts.Alugueis.Interfaces;
+using Avaliacao.Microservice.Domain.Contexts.Veiculos.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
-using Microsoft.EntityFrameworkCore;
-using Avaliacao.Microservice.Domain.Contexts.Veiculo.Interfaces;
-using Avaliacao.Infraestructure.Data.Repositories;
+using System.Data;
 
 namespace Avaliacao.Infraestructure
 {
@@ -18,6 +19,7 @@ namespace Avaliacao.Infraestructure
             services.AddScoped<IMediatorHandler, MediatorHandler>();
 
             services.AddScoped<IVeiculoRepository, VeiculoRepository>();
+            services.AddScoped<IAluguelRepository, AluguelRepository>();
 
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddTransient<IDbConnection>(_ => new NpgsqlConnection(connectionString));

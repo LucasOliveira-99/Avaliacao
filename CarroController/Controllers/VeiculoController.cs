@@ -2,11 +2,13 @@
 using Avaliacao.Application.Veiculo.Commands.AlugarVeiculo;
 using Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo;
 using Avaliacao.Application.Veiculo.Commands.FinalizarAluguel;
+using Avaliacao.Application.Veiculo.Commands.ObterVeiculo;
 using Avaliacao.Infraestructure.CrossCutting.Common.Interfaces;
 using Avaliacao.Microservice.WebAPI.Controllers.Common;
 using Avaliacao.Microservice.WebAPI.DTOs.AlugarVeiculo;
 using Avaliacao.Microservice.WebAPI.DTOs.CadastrarVeiculo;
 using Avaliacao.Microservice.WebAPI.DTOs.FinalizarAluguel;
+using Avaliacao.Microservice.WebAPI.DTOs.ObterVeiculo;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Avaliacao.Microservice.WebAPI.Controllers
@@ -43,5 +45,16 @@ namespace Avaliacao.Microservice.WebAPI.Controllers
 
             return response;
         }
+
+        [HttpGet("obter-veiculos")]
+        public async Task<IActionResult> ObterVeiculos([FromQuery] ObterVeiculoRequest request)
+        {
+            var command = _mapper.Map<ObterVeiculoRequest, ObterVeiculoQuery>(request);
+            var veiculos = await _mediatorHandler.ExecutarQueryAsync(command);
+
+            return Ok(veiculos);
+        }
+
+        //TODO - Criar ObterVeiculos HttpGet
     }
 }

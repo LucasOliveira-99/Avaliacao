@@ -54,7 +54,5 @@ namespace Avaliacao.Microservice.WebAPI.Controllers
 
             return Ok(veiculos);
         }
-
-        //TODO - Criar ObterVeiculos HttpGet
     }
 }

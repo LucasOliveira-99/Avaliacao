@@ -13,7 +13,7 @@ try
     {
         app.UseSwaggerConfig();
     }
-    //TODO - FALTOU CONFIGURAR O ELASTIC.APM E O HealthChecks OLHAR O BFF
+
     app.MapControllers();
     app.Run();
 }

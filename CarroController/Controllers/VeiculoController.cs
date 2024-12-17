@@ -19,6 +19,11 @@ namespace Avaliacao.Microservice.WebAPI.Controllers
         {
         }
 
+        /// <summary>
+        /// Cadastra um novo veículo.
+        /// </summary>
+        /// <param name="request">Dados do veículo a ser cadastrado.</param>
+        /// <returns>Resultado da operação de cadastro.</returns>
         [HttpPost("cadastrar-veiculo")]
         public async Task<IActionResult> CadastrarVeiculo([FromBody] CadastrarVeiculoRequest request)
         {
@@ -28,6 +33,11 @@ namespace Avaliacao.Microservice.WebAPI.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Solicita o aluguel de um veículo.
+        /// </summary>
+        /// <param name="request">Dados do aluguel do veículo.</param>
+        /// <returns>Resultado da operação de aluguel.</returns>
         [HttpPost("alugar-veiculo")]
         public async Task<IActionResult> AlugarVeiculo([FromBody] AlugarVeiculoRequest request)
         {
@@ -37,6 +47,11 @@ namespace Avaliacao.Microservice.WebAPI.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Finaliza o aluguel de um veículo.
+        /// </summary>
+        /// <param name="request">Dados para finalizar o aluguel.</param>
+        /// <returns>Resultado da operação de finalização do aluguel.</returns>
         [HttpPost("finalizar-aluguel")]
         public async Task<IActionResult> FinalizarAluguel([FromBody] FinalizarAluguelRequest request)
         {
@@ -46,6 +61,11 @@ namespace Avaliacao.Microservice.WebAPI.Controllers
             return response;
         }
 
+        /// <summary>
+        /// Obtém uma lista de veiculos já cadastrados.
+        /// </summary>
+        /// <param name="request">Parâmetros para obter os veículos.</param>
+        /// <returns>Lista de veículos.</returns>
         [HttpGet("obter-veiculos")]
         public async Task<IActionResult> ObterVeiculos([FromQuery] ObterVeiculoRequest request)
         {

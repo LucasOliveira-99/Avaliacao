@@ -1,9 +1,10 @@
-﻿using System.Text.Json;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
+using System.Text.Json;
 
 namespace Avaliacao.Microservice.WebAPI.Configurations.Swagger
 {
@@ -48,6 +49,10 @@ namespace Avaliacao.Microservice.WebAPI.Configurations.Swagger
                 c.CustomSchemaIds(x => x.FullName);
                 c.OperationFilter<SwaggerDefaultValues>();
                 c.OperationFilter<SecurityRequirementsOperationFilter>();
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
 
             return services;

@@ -31,13 +31,13 @@ namespace Avaliacao.Microservice.WebAPI.Configurations.Swagger
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
                 {
                     Version = "v1",
-                    Title = "Senff API Odonto",
+                    Title = "API CarroController",
                 });
 
                 c.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo()
                 {
                     Version = "v2",
-                    Title = "Senff Microservice Template",
+                    Title = "CarroController Microservice Template",
                     Description = "Esta API é um template base"
                 });
 

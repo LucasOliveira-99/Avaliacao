@@ -26,8 +26,6 @@ namespace Avaliacao.Infraestructure
 
             services.AddDbContext<ApplicationDbContext>(opt =>
               opt.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
-
-            //services.ResolveInfraestructureRabbitMQMessageBus(configuration);
         }
     }
 }

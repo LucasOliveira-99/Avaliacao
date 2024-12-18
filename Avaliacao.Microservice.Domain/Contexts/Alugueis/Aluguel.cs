@@ -47,14 +47,7 @@ namespace Avaliacao.Microservice.Domain.Contexts.Alugueis
 
             CalcularTaxaDeAtraso();
 
-            if (EstaAtrasado())
-            {
-                Status = StatusAluguel.ATRASADO;
-            }
-            else
-            {
-                Status = StatusAluguel.CONCLUIDO;
-            }
+            Status = EstaAtrasado() ? StatusAluguel.ATRASADO : StatusAluguel.CONCLUIDO;
         }
 
         public void CalcularTaxaDeAtraso()

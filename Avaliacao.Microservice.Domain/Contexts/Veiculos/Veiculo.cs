@@ -21,7 +21,7 @@ namespace Avaliacao.Microservice.Domain.Contexts.Veiculos
 
         public string Placa { get; private set; }
         public string Modelo { get; private set; }
-        public string Marca { get; private set; }
+        public string Marca{ get; private set; }
         public string Cor { get; private set; }
         public StatusVeiculo FlagStatusVeiculo { get; private set; }
         public List<Aluguel> Alugueis { get; private set; }

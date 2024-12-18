@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  avaliacao.microservice.webapi:
+    image: ${DOCKER_REGISTRY-}avaliacaomicroservicewebapi
+    container_name: avaliacao.microservice.webapi
+    build:
+      context: .
+      dockerfile: CarroController/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=localhost;Port=5432;Database=veiculos;User Id=postgres;Password=lucas;CommandTimeout=30000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: lucas
+      POSTGRES_DB: veiculos
+    volumes:
+      - avaliacao.microservice.database:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  avaliacao.microservice.database:

@@ -1,4 +1,5 @@
-﻿using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
+﻿using Avaliacao.Application.Veiculo.Commands.AlugarVeiculo.Validators;
+using Avaliacao.Infraestructure.CrossCutting.Common.CQS;
 using Avaliacao.Infraestructure.CrossCutting.Common.Enums;
 
 namespace Avaliacao.Application.Veiculo.Commands.AlugarVeiculo
@@ -15,11 +16,11 @@ namespace Avaliacao.Application.Veiculo.Commands.AlugarVeiculo
 
         public StatusAluguel Status { get; set; }
 
-        //public override bool IsValid()
-        //{
-        //    AdicionarErros(new CadastrarVeiculoValidator().Validate(this));
+        public override bool IsValid()
+        {
+            AdicionarErros(new AlugarVeiculoValidator().Validate(this));
 
-        //    return ValidationResult.IsValid;
-        //}
+            return ValidationResult.IsValid;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Avaliacao.Application.Veiculo.Commands.CadastrarVeiculo.Handlers
 {
     public class CadastrarVeiculoCommandHandler : CommandHandler, IRequestHandler<CadastrarVeiculoCommand, IActionResult>
     {
-        private IVeiculoRepository _veiculoRepository;
+        private readonly IVeiculoRepository _veiculoRepository;
 
         public CadastrarVeiculoCommandHandler(IVeiculoRepository veiculoRepository)
         {

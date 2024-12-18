@@ -8,7 +8,7 @@ namespace Avaliacao.Application.Veiculo.Commands.ObterVeiculo.Handlers
 {
     public class ObterVeiculoCommandHandler : CommandHandler, IRequestHandler<ObterVeiculoQuery, IActionResult>
     {
-        private IVeiculoRepository _veiculoRepository;
+        private readonly IVeiculoRepository _veiculoRepository;
 
         public ObterVeiculoCommandHandler(IVeiculoRepository veiculoRepository)
         {

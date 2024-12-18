@@ -10,8 +10,8 @@ namespace Avaliacao.Application.Veiculo.Commands.FinalizarAluguel.Handlers
 {
     public class FinalizarAluguelCommandHandler : CommandHandler, IRequestHandler<FinalizarAluguelCommand, IActionResult>
     {
-        private IVeiculoRepository _veiculoRepository;
-        private IAluguelRepository _aluguelRepository;
+        private readonly IVeiculoRepository _veiculoRepository;
+        private readonly IAluguelRepository _aluguelRepository;
 
         public FinalizarAluguelCommandHandler(IVeiculoRepository veiculoRepository, IAluguelRepository aluguelRepository)
         {

@@ -26,7 +26,7 @@ namespace Avaliacao.Infraestructure.Data.Repositories
 
                 return veiculo;
             }
-            else if (veiculoId.HasValue && veiculoId.Value == null)
+            else if (veiculoId is null || veiculoId.Value == 0)
             {
                 return await _context.Veiculos.ToListAsync();
             }

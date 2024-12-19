@@ -19,7 +19,7 @@ namespace Avaliacao.Application.Veiculo.Commands.ObterVeiculo.Handlers
         {
             var veiculo = await _veiculoRepository.ObterVeiculos(command.VeiculoId);
 
-            if (veiculo is null)
+            if (veiculo.Count == 0)
             {
                 return ReturnNotFound<ObterVeiculoView>("Veículo não encontrado");
             }

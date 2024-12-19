@@ -18,8 +18,8 @@ services:
     container_name: postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: lucas
-      POSTGRES_DB: veiculos
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: Avaliacao
     volumes:
       - avaliacao.microservice.database:/var/lib/postgresql/data
     ports:

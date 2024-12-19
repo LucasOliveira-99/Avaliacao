@@ -65,7 +65,8 @@ namespace Avaliacao.Microservice.WebAPI.Controllers
         /// Obtém uma lista de veiculos já cadastrados.
         /// </summary>
         /// <param name="request">Parâmetros para obter os veículos.</param>
-        /// <returns>Lista de veículos.</returns>
+        /// <returns>Busca um veiculo pelo Id.</returns>
+        /// <returns>Caso o Id seja nulo, retorna todos os veiculos.</returns>
         [HttpGet("obter-veiculos")]
         public async Task<IActionResult> ObterVeiculos([FromQuery] ObterVeiculoRequest request)
         {
